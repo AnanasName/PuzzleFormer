@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Interactable
+  - Trash
+  - Hero
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3716672347
+    locked: 0
+  - name: Decoration
+    uniqueID: 984628053
+    locked: 0
+  - name: Level
+    uniqueID: 1015493397
+    locked: 0
+  - name: Props
+    uniqueID: 1394831631
+    locked: 0
+  - name: Player
+    uniqueID: 1111935577
+    locked: 0
+  - name: TopDecor
+    uniqueID: 819052423
+    locked: 0
