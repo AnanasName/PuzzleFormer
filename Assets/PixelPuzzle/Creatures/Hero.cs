@@ -1,7 +1,9 @@
-﻿using PixelPuzzle.Components;
+﻿using System.Collections;
+using PixelPuzzle.Components;
 using PixelPuzzle.Creatures;
 using PixelPuzzle.Model;
 using PixelPuzzle.Utils;
+using PixelPuzzle.Utils.PixelPuzzle.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -10,15 +12,18 @@ namespace PixelPuzzle
     public class Hero : Creature
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
-         
+
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _interactionRadius;
 
+        [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _unarmed;
 
-        [Space] [Header("Particles")]
-        [SerializeField] private ParticleSystem _hitParticles;
+        [Space] [Header("Particles")] [SerializeField]
+        private ParticleSystem _hitParticles;
+
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
 
         private bool _allowDoubleJump;
         private float _defaultJumpSpeed;
@@ -127,25 +132,63 @@ namespace PixelPuzzle
         public override void Attack()
         {
             if (!_session.Data.IsArmed) return;
-            
+
             base.Attack();
         }
 
         protected override void OnDoAttack()
         {
-            _particles.Spawn("Attack");
             base.OnDoAttack();
+            _particles.Spawn("Attack");
         }
 
         public void ArmHero()
         {
-            _session.Data.IsArmed = true;
+            if (!_session.Data.IsArmed)
+                _session.Data.IsArmed = true;
+            else
+                _session.Data.SwordsCount += 1;
             UpdateHeroWeapon();
         }
 
         private void UpdateHeroWeapon()
         {
             Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _unarmed;
+        }
+
+        public void Throw()
+        {
+            _particles.Spawn("ThrowSword");
+            _session.Data.SwordsCount -= 1;
+        }
+
+        public void OnDoThrow(bool massiveThrow)
+        {
+            if (_session.Data.SwordsCount > 0)
+            {
+                if (_throwCooldown.IsReady)
+                {
+                    if (massiveThrow)
+                    {
+                        StartCoroutine(SpawnMassiveSword());
+                    }
+                    else
+                    {
+                        Animator.SetTrigger(ThrowKey);
+                    }
+                    _throwCooldown.Reset();
+                }
+            }
+        }
+
+        private IEnumerator SpawnMassiveSword()
+        {
+            var count = Mathf.Clamp(_session.Data.SwordsCount, 0, 3);
+            for (int i = 0; i < count; i++)
+            {
+                Animator.SetTrigger(ThrowKey);
+                yield return new WaitForSeconds(0.2f);
+            }
         }
     }
 }

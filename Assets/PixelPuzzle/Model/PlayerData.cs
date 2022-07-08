@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 namespace PixelPuzzle.Model
 {
@@ -11,10 +10,20 @@ namespace PixelPuzzle.Model
             Coins = coins;
             Hp = hp;
             IsArmed = isArmed;
+            SwordsCount = 0;
+        }
+        
+        public PlayerData(int coins, int hp, bool isArmed, int swordsCount)
+        {
+            Coins = coins;
+            Hp = hp;
+            IsArmed = isArmed;
+            SwordsCount = swordsCount;
         }
 
         public int Coins;
         public int Hp;
         public bool IsArmed;
+        public int SwordsCount;
     }
 }

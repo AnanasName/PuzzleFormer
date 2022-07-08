@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using PixelPuzzle.Components;
 using UnityEngine;
@@ -17,7 +16,7 @@ namespace PixelPuzzle.Creatures
         private GameObject _target;
 
         public static readonly int IsDeadKey = Animator.StringToHash("is-dead");
-        
+
         private SpawnListComponent _particles;
         private Creature _creature;
         private Animator _animator;
@@ -40,7 +39,7 @@ namespace PixelPuzzle.Creatures
         public void OnHeroInVision(GameObject go)
         {
             if (_isDead) return;
-            
+
             _target = go;
 
             StartState(AgroToHero());
@@ -48,9 +47,16 @@ namespace PixelPuzzle.Creatures
 
         private IEnumerator AgroToHero()
         {
+            LookAtHero();
             _particles.Spawn("Exclamation");
             yield return new WaitForSeconds(_alarmDelay);
             StartState(GoToHero());
+        }
+
+        private void LookAtHero()
+        {
+            var direction = GetDirectionToTarget();
+            _creature.UpdateSpriteDirection(direction);
         }
 
         private IEnumerator GoToHero()
@@ -68,9 +74,11 @@ namespace PixelPuzzle.Creatures
 
                 yield return null;
             }
-            
+
+            _creature.SetDirection(Vector2.zero);
             _particles.Spawn("Miss");
             yield return new WaitForSeconds(_missHeroCooldown);
+            
             StartState(_patrol.DoPatrol());
         }
 
@@ -81,20 +89,21 @@ namespace PixelPuzzle.Creatures
                 _creature.Attack();
                 yield return new WaitForSeconds(_attackCooldown);
             }
-            
+
             StartState(GoToHero());
         }
 
         private void SetDirectionToTarget()
         {
-            var direction = _target.transform.position - transform.position;
-            direction.y = 0;
-            _creature.SetDirection(direction.normalized);
+            var direction = GetDirectionToTarget();
+            _creature.SetDirection(direction);
         }
 
-        private IEnumerator Patrolling()
+        private Vector2 GetDirectionToTarget()
         {
-            yield return null;
+            var direction = _target.transform.position - transform.position;
+            direction.y = 0;
+            return direction.normalized;
         }
 
         private void StartState(IEnumerator coroutine)
@@ -108,12 +117,14 @@ namespace PixelPuzzle.Creatures
 
         public void OnDie()
         {
+            _creature.SetDirection(Vector2.zero);
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);
-            
+
             if (_current != null)
+            {
                 StopCoroutine(_current);
+            }
         }
-        
     }
 }

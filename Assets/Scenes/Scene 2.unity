@@ -544,6 +544,7 @@ MonoBehaviour:
     Coins: 0
     Hp: 5
     IsArmed: 1
+    SwordsCount: 0
 --- !u!4 &618949869
 Transform:
   m_ObjectHideFlags: 0
@@ -1678,6 +1679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 221081190697607108, guid: ea2d7f606522e74458e6573f8f39d2df,
+        type: 3}
+      propertyPath: _throwCooldown._value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 221081190697607111, guid: ea2d7f606522e74458e6573f8f39d2df,
         type: 3}

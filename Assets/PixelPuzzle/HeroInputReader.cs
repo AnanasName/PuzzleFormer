@@ -15,7 +15,7 @@ namespace PixelPuzzle
 
         public void OnInteract(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
             {
                 _hero.Interact();
             }
@@ -23,9 +23,21 @@ namespace PixelPuzzle
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
             {
                 _hero.Attack();
+            }
+        }
+
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.OnDoThrow(true);
+            }
+            else if (context.canceled)
+            {
+                _hero.OnDoThrow(false);
             }
         }
     }

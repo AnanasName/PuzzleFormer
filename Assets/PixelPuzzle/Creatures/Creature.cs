@@ -1,4 +1,4 @@
-using System;
+
 using PixelPuzzle.Components;
 using UnityEngine;
 
@@ -34,6 +34,7 @@ namespace PixelPuzzle.Creatures
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
+                
         }
 
         public void SetDirection(Vector2 direction)
@@ -56,7 +57,7 @@ namespace PixelPuzzle.Creatures
             Animator.SetFloat(VerticalVelocity, _rigidbody.velocity.y);
             Animator.SetBool(IsRunning, _direction.x != 0);
 
-            UpdateSpriteDirection();
+            UpdateSpriteDirection(_direction);
         }
 
         protected virtual float CalculateYVelocity()
@@ -95,14 +96,14 @@ namespace PixelPuzzle.Creatures
             return yVelocity;
         }
 
-        private void UpdateSpriteDirection()
+        public void UpdateSpriteDirection(Vector2 direction)
         {
             var multipler = _invertScale ? -1 : 1;
-            if (_direction.x > 0)
+            if (direction.x > 0)
             {
                 transform.localScale = new Vector3(multipler, 1, 1);
             }
-            else if (_direction.x < 0)
+            else if (direction.x < 0)
             {
                 transform.localScale = new Vector3(-1 * multipler, 1, 1);
             }
