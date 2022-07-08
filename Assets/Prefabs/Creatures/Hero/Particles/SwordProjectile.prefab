@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 3965658707024058852}
   - component: {fileID: 3965658707024058853}
   - component: {fileID: 697946074675986567}
-  - component: {fileID: 968096382212109178}
   - component: {fileID: 6661813871325285097}
   - component: {fileID: 1785979154773152896}
   - component: {fileID: 1347030578871898504}
   - component: {fileID: 1353420527706775652}
   - component: {fileID: 733684144083065668}
+  - component: {fileID: 1128664546709903426}
   m_Layer: 0
   m_Name: SwordProjectile
   m_TagString: Untagged
@@ -131,19 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 3965658707024058857}
---- !u!114 &968096382212109178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3965658707024058857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec8fc64ad37649a39b5598119a44261c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 6
 --- !u!50 &6661813871325285097
 Rigidbody2D:
   serializedVersion: 4
@@ -280,6 +267,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1128664546709903426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3965658707024058857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d4cd068d4b426a82201bd4e0dd3835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 6
 --- !u!1 &7713238122389733202
 GameObject:
   m_ObjectHideFlags: 0

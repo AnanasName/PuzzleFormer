@@ -9,7 +9,7 @@ namespace PixelPuzzle.Components.GoBased
         [SerializeField] private GameObject _objectToDestroy;
         public void DestroyObject()
         {
-            DestroyImmediate(_objectToDestroy);
+            Destroy(_objectToDestroy);
         }
     }
 }
