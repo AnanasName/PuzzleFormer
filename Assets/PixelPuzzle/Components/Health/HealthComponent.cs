@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelPuzzle.Components
+namespace PixelPuzzle.Components.Health
 {
     public class HealthComponent : MonoBehaviour
     {

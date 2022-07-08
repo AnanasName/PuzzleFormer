@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using PixelPuzzle.Components;
+using PixelPuzzle.Components.ColliderBased;
+using PixelPuzzle.Components.Health;
 using PixelPuzzle.Creatures;
 using PixelPuzzle.Model;
 using PixelPuzzle.Utils;
@@ -7,7 +9,7 @@ using PixelPuzzle.Utils.PixelPuzzle.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
 
-namespace PixelPuzzle
+namespace PixelPuzzle.Creatures.Hero
 {
     public class Hero : Creature
     {

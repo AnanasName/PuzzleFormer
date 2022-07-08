@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelPuzzle
+namespace PixelCrew.Animation
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class MultiStateSpriteAnimationModified : MonoBehaviour

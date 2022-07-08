@@ -6,7 +6,7 @@ using PixelPuzzle.Utils;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew.Components
+namespace PixelPuzzle.Components.ColliderBased
 {
     public class EnterTriggerComponent : MonoBehaviour
     {

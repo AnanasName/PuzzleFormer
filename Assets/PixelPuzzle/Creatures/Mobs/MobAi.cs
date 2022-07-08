@@ -1,8 +1,10 @@
 using System.Collections;
 using PixelPuzzle.Components;
+using PixelPuzzle.Components.ColliderBased;
+using PixelPuzzle.Components.GoBased;
 using UnityEngine;
 
-namespace PixelPuzzle.Creatures
+namespace PixelPuzzle.Creatures.Mobs
 {
     public class MobAi : MonoBehaviour
     {
@@ -21,14 +23,14 @@ namespace PixelPuzzle.Creatures
         private Creature _creature;
         private Animator _animator;
         private bool _isDead;
-        private Patrol _patrol;
+        private Patrol.Patrol _patrol;
 
         private void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
             _creature = GetComponent<Creature>();
             _animator = GetComponent<Animator>();
-            _patrol = GetComponent<Patrol>();
+            _patrol = GetComponent<Patrol.Patrol>();
         }
 
         private void Start()

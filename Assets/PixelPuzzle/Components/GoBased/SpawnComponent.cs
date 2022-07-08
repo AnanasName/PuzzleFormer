@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PixelPuzzle.Components
+namespace PixelPuzzle.Components.GoBased
 {
     public class SpawnComponent : MonoBehaviour
     {

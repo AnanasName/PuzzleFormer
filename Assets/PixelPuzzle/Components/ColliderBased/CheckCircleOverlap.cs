@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelPuzzle
+namespace PixelPuzzle.Components.ColliderBased
 {
     public class CheckCircleOverlap : MonoBehaviour
     {

@@ -6,7 +6,7 @@ using PixelPuzzle.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelCrew.Components
+namespace PixelPuzzle.Components.LevelManagement
 {
     public class ReloadLevelComponent : MonoBehaviour
     {

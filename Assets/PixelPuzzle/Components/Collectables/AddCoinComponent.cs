@@ -1,15 +1,15 @@
 using UnityEngine;
 
-namespace PixelPuzzle.Components
+namespace PixelPuzzle.Components.Collectables
 {
     public class AddCoinComponent : MonoBehaviour
     {
         [SerializeField] private int _numCoins;
-        private Hero _hero;
+        private Creatures.Hero.Hero _hero;
 
         private void Start()
         {
-            _hero = FindObjectOfType<Hero>();
+            _hero = FindObjectOfType<Creatures.Hero.Hero>();
         }
 
         public void Add()

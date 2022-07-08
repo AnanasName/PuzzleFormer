@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace PixelPuzzle
+namespace PixelPuzzle.Components.GoBased
 {
     public class RandomSpawner : MonoBehaviour
     {

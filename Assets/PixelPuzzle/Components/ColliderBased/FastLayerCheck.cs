@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PixelPuzzle
+namespace PixelPuzzle.Components.ColliderBased
 {
     public class FastLayerCheck : MonoBehaviour
     {

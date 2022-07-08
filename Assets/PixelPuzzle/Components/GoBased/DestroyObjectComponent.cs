@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelPuzzle.Components.GoBased
 {
     public class DestroyObjectComponent : MonoBehaviour
     {

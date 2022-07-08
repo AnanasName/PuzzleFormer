@@ -1,5 +1,7 @@
 
 using PixelPuzzle.Components;
+using PixelPuzzle.Components.ColliderBased;
+using PixelPuzzle.Components.GoBased;
 using UnityEngine;
 
 namespace PixelPuzzle.Creatures

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelPuzzle.Components
+namespace PixelPuzzle.Components.ColliderBased
 {
     public class EnterCollisionComponent : MonoBehaviour
     {

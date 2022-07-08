@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelPuzzle.Components
+namespace PixelPuzzle.Components.Health
 {
     public class ChangeHealthComponent : MonoBehaviour
     {

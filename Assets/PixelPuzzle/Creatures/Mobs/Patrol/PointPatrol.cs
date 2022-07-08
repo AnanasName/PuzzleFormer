@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace PixelPuzzle.Creatures
+namespace PixelPuzzle.Creatures.Mobs.Patrol
 {
     public class PointPatrol : Patrol
     {

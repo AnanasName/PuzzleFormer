@@ -2,7 +2,7 @@ using PixelPuzzle.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelPuzzle.Components
+namespace PixelPuzzle.Components.LevelManagement
 {
     public class ExitLevelComponent : MonoBehaviour
     {

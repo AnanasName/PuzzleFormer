@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace PixelPuzzle.Creatures.Weapons
+namespace PixelPuzzle.Creatures.Weapons.Projectile
 {
     public class Projectile : MonoBehaviour
     {

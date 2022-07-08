@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelPuzzle.Components
+namespace PixelPuzzle.Components.Interactions
 {
     public class InteractableComponent : MonoBehaviour
     {

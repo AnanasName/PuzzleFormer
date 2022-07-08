@@ -10,11 +10,11 @@ namespace PixelPuzzle.Components
         [SerializeField] private float _effectTime;
 
         private float _timeLeft;
-        private Hero _hero;
+        private Creatures.Hero.Hero _hero;
 
         private void Awake()
         {
-            _hero = FindObjectOfType<Hero>();
+            _hero = FindObjectOfType<Creatures.Hero.Hero>();
         }
 
         public void ChangeHeroJumpSpeed()

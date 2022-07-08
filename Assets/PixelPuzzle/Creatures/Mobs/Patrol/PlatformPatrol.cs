@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
+using PixelPuzzle.Components.ColliderBased;
 using UnityEngine;
 
-namespace PixelPuzzle.Creatures
+namespace PixelPuzzle.Creatures.Mobs.Patrol
 {
     public class PlatformPatrol : Patrol
     {

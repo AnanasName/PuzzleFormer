@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-namespace PixelPuzzle.Components
+namespace PixelPuzzle.Components.GoBased
 {
     public class SpawnListComponent : MonoBehaviour
     {
